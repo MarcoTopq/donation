@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 const redis = require('redis');
-const client = redis.createClient();
+// const client = redis.createClient();
 var db = new Sequelize({
   database: 'kDECKsmyE3', 
   username: 'kDECKsmyE3', 
@@ -27,9 +27,9 @@ db
   });
 
 
-  client.on('error', function (err) {
-    console.log('Error ' + err)
-  })
+  // client.on('error', function (err) {
+  //   console.log('Error ' + err)
+  // })
 module.exports = db
 // , connection;
 
