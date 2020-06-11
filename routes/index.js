@@ -3,24 +3,6 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../middleware/auth');
 // var cache = require('express-redis-cache')();
-const redis = require('redis');
-const client = redis.createClient(6379);
-/* GET home page. */
-var multer = require('multer');
-var path = require('path');
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/images');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname)
-    + '-' + Date.now() +
-    path.extname(file.originalname);
-  }
-});
-var upload = multer({
-  storage: storage
-})
 
 router.get('/', function (req, res, next) {
   res.render('index', {
