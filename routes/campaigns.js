@@ -136,7 +136,7 @@ router.get('/:id', async (req, res) => {
         .catch(err => res.status(400).json(err))
 });
 
-router.put('/:id', auth.checkToken, expressJoi(updateSchema), async (req, res) => {
+router.post('/:id', async (req, res) => {
     var Id = req.params.id;
     var body = req.body;
     await Campaign.findOne({
@@ -170,7 +170,7 @@ router.put('/:id', auth.checkToken, expressJoi(updateSchema), async (req, res) =
         .catch(err => res.status(400).json(err))
 })
 
-router.delete('/:id', auth.checkToken, auth.isAuthorized, async (req, res) => {
+router.delete('/:id',  async (req, res) => {
     var Id = req.params.id;
     await Campaign.update({
         isDelete: true
