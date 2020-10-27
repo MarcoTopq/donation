@@ -1,27 +1,11 @@
 var Sequelize = require('sequelize');
 const redis = require('redis');
 // const client = redis.createClient();
-var db = new Sequelize({
-  database: 'kDECKsmyE3', 
-  username: 'kDECKsmyE3', 
-  password: 'qe3Cr11fEf',
-  host: 'remotemysql.com',
-  port: 3306,
-  dialect: 'mysql',
-  operatorsAliases: false,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
-});
-
 // var db = new Sequelize({
-//   database: 'donation', 
-//   username: 'root', 
-//   password: '',
-//   host: '127.0.0.1',
+//   database: 'kDECKsmyE3', 
+//   username: 'kDECKsmyE3', 
+//   password: 'qe3Cr11fEf',
+//   host: 'remotemysql.com',
 //   port: 3306,
 //   dialect: 'mysql',
 //   operatorsAliases: false,
@@ -32,6 +16,22 @@ var db = new Sequelize({
 //     idle: 10000,
 //   },
 // });
+
+var db = new Sequelize({
+  database: 'donation', 
+  username: 'root', 
+  password: '',
+  host: '127.0.0.1',
+  port: 3306,
+  dialect: 'mysql',
+  operatorsAliases: false,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
+});
 
 db
   .authenticate()

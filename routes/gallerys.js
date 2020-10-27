@@ -2,14 +2,8 @@ var express = require('express');
 var router = express.Router();
 var dateFormat = require('dateformat');
 var Gallerys = require('../models/gallerys');
-var bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
-var config = require('../config/index');
-var auth = require('../middleware/auth');
-var expressJoi = require('express-joi-validator');
 var Joi = require('joi');
 var multer = require('multer');
-var path = require('path');
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public/images');

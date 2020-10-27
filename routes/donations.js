@@ -68,7 +68,7 @@ router.post('/create', async (req, res) => {
                 category: camp.category,
                 description: camp.description,
                 image: camp.image,
-                current_donation: body.donation,
+                current_donation: body.total_donation,
                 total_donation: camp.total_donation,
                 time_limit: camp.time_limit,
                 created_at: camp.created_at,
@@ -125,7 +125,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     var Id = req.params.id;
-    await Donation.findOne({
+    await Donat.findOne({
             where: {
                 id: Id
             }
@@ -143,7 +143,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     var Id = req.params.id;
     var body = req.body;
-    await Donation.findOne({
+    await Donat.findOne({
             where: {
                 id: Id
             }
@@ -170,7 +170,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     var Id = req.params.id;
-    await Donation.update({
+    await Donat.update({
         isDelete: true
     }, {
         where: {

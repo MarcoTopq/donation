@@ -36,9 +36,6 @@ app.use('/donations', donationsRouter);
 app.use('/gallerys', gallerysRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
-// app.use('/genre', genreRouter);
-// app.use('/document', documentRouter);
-// app.use('/credit', creditRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
