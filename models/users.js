@@ -15,6 +15,15 @@ const User = db.define('m_user', {
   phone: {
     type: Sequelize.STRING,
   },
+  sex: {
+    type: Sequelize.STRING,
+  },
+  job: {
+    type: Sequelize.STRING,
+  },
+  domicile: {
+    type: Sequelize.STRING,
+  },
   email: {
     type: Sequelize.STRING,
     // unique: true,

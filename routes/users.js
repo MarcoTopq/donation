@@ -39,6 +39,9 @@ router.post('/signup', async (req, res) => {
         User.create({
             username: body.username,
             email: body.email,
+            sex: body.sex,
+            job: body.job,
+            domicile: body.domicile,
             phone: body.phone,
             password: bcrypt.hashSync(body.password, 10),
             role: body.role
@@ -97,6 +100,9 @@ router.post('/edit/:id', async (req, res) => {
       var update = await User.update({
         username: body.username,
         email: body.email,
+        sex: body.sex,
+        job: body.job,
+        domicile: body.domicile,
         phone: body.phone,
         password: bcrypt.hashSync(body.password, 10),
         role: body.role
